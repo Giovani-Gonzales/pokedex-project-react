@@ -14,29 +14,34 @@ function App() {
   const [visible, setVisible] = useState(false)
 
 
-  useEffect(()=>{
-    fetch('https://pokeapi.co/api/v2/pokemon')
-    .then((resp) => resp.json())
-    .then((data) => setPokemons(data.results))
-  })
+  useEffect(() => {
+    const fetchPokemons = async () => {
+      const resp = await fetch('https://pokeapi.co/api/v2/pokemon');
+      const data = await resp.json();
+      setPokemons(data.results);
+    };
+
+    fetchPokemons();
+  }, []);
 
   useEffect(() => {
-    if (pokeName !== '') {
-      fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-        .then((resp) => resp.json())
-        .then((data) => {
-          setAltura(data.height)
-          setId(data.id)
-          setSprite(data.sprites.other.showdown.front_default)
-          setType(data.types.map(type => type.type.name).join(', '))
-          setWeight(data.weight)
-          setVisible(true)
-        })
-    } else {
-      setVisible(false)
-    }
-  }, [pokeName])
-  
+    const fetchPokemonData = async () => {
+      if (pokeName !== '') {
+        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
+        const data = await resp.json();
+        setAltura(data.height);
+        setId(data.id);
+        setSprite(data.sprites.other.showdown.front_default);
+        setType(data.types.map(type => type.type.name).join(', '));
+        setWeight(data.weight);
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    fetchPokemonData();
+  }, [pokeName]);
 
 
 
