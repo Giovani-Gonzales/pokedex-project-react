@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import Tema from './components/HookContext'
+import Reducer from './components/HookReducer'
+import Ref from './components/HookRef'
+import Memo from './components/HookMemo'
+import CallBack from './components/HookCallback'
+
 import Img from './assets/Pokemon-API.png'
 
 function App() {
@@ -47,6 +53,11 @@ function App() {
 
   return (
     <div>
+      <Tema/>
+      <Reducer/>
+      <Ref/>
+      <Memo/>
+      <CallBack/>
       <img src={Img} width="60%"/>
 
       <form>
