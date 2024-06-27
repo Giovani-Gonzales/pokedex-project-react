@@ -1,0 +1,93 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+*{
+  font-family: Pixelify Sans;
+}
+
+
+form{
+
+  & select{
+    background-color: white;
+    border: none;
+    padding: 10px;
+    outline: 1px solid transparent;
+    box-shadow: 10px -5px 0 black;
+    border: 2px solid black;
+    transition: outline 0.25s;
+    color: black;
+  }
+
+  & select:focus{
+    outline: 1px solid #b80000;
+  }
+
+  & select:hover{
+    outline: 1px solid #b80000;
+  }
+
+  & option{
+    border-radius: 0px;
+    border: none;
+    padding: 10px;
+  }
+}
+
+.pokecard{
+  justify-content: center;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  color: black;
+  padding: 10px;
+  width: 270px;
+  display: flex;
+  margin: 0 auto;
+  border: 3px solid black;
+
+  & p{
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+
+    & span{
+      font-weight: normal;
+    }
+  }
+
+}
+
+.pokemon{
+  width: 200px;
+  height: 200px;
+}
+
+.choose{
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+  background-color: transparent;
+  background-color: transparent;
+  backdrop-filter: blur(2px); 
+  padding: 5px; 
+  border-radius: 30px;
+
+  & span{
+    color:#ff0000;
+    font-size: 40px;
+  }
+
+}
+
+
+.visible{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}
